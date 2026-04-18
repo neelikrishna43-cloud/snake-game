@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 antialiased;
+  }
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); text-shadow: -2px 0 #06b6d4, 2px 0 #ec4899; }
+  20% { transform: translate(-2px, 2px); text-shadow: -2px 0 #06b6d4, 2px 0 #ec4899; }
+  40% { transform: translate(-2px, -2px); text-shadow: 2px 0 #06b6d4, -2px 0 #ec4899; }
+  60% { transform: translate(2px, 2px); text-shadow: -2px 0 #06b6d4, 2px 0 #ec4899; }
+  80% { transform: translate(2px, -2px); text-shadow: 2px 0 #06b6d4, -2px 0 #ec4899; }
+  100% { transform: translate(0); text-shadow: -2px 0 #06b6d4, 2px 0 #ec4899; }
+}
+
+.animate-glitch {
+  animation: glitch 0.5s cubic-bezier(.25, .46, .45, .94) both infinite;
+}
